@@ -1,24 +1,57 @@
 let question = {
     title: 'kraman',
     alternatives: ['mouse', 'cat', 'dog', 'parrot'],
-    correctAnswer: 3
+    correctAnswer: 2
 };
 
+let app = {
+    start: function(){
+        //showing alternatives in the DOM
+        let alternatives = document.querySelectorAll('.alternatives')
+        console.log(alternatives);
+        //looping through alternatives 
+        alternatives.forEach((element, index) => {
+            element.addEventListener('click', () =>{
+                //check correct answer
+                this .checkAnswer(index)
+            })
+        })
+        //show question
+    this.showQuestion(question)
+    },
 
 
-function showQuestion (question) {
-    //select title ID in html
-    let titleDiv = document.getElementById('title')
+    showQuestion: function(question){
+        //keep track of current question
+        this.currQuestion = question
 
-    //modify title div to appear in the DOM
-    titleDiv.textContent = question.title
+            //select title ID in html
+        let titleDiv = document.getElementById('title')
+        //displays in the dom
+        titleDiv.textContent = question.title
 
-    //showing alternatives in the DOM
-    let alternatives = document.querySelectorAll('.alternatives')
-    console.log(alternatives);
-    alternatives.forEach(function(element, index) {
-        element.textContent = question.alternatives[index]
-    })
+        //show alternatives in DOM
+        let alternatives = document.querySelectorAll('.alternatives')
+        console.log(alternatives);
+        //looping through alternatives to show in DOM
+        alternatives.forEach(function(element, index) {
+            element.textContent = question.alternatives[index]
+            
+        }) 
+    },
+
+    checkAnswer: function(userSelected){
+        if (this.currQuestion.correctAnswer == userSelected ) {
+            console.log("this is correct");
+        } else {
+            console.log('this is not correct')
+        }
+    }
 }
 
-showQuestion(question)
+
+
+//initialize application
+ app.start()
+
+
