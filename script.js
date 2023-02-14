@@ -135,5 +135,3 @@ let app = {
 
 //initialize application
  app.start()
-
-
