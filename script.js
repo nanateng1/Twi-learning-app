@@ -4,7 +4,6 @@ let questions = [{
     title: 'kraman',
     alternatives: ['mouse', 'cat', 'dog', 'parrot'],
     correctAnswer: 2
-<<<<<<< HEAD
 },
 {
     title: 'anomaa',
@@ -40,9 +39,6 @@ let app = {
         //show question
     this.showQuestion(questions[this.currPosition])
     },
-=======
-};
->>>>>>> bdb9d185413b53edca2a17608a93e9a333fe2374
 
 let app = {
     start: function(){
@@ -68,7 +64,6 @@ let app = {
         //displays in the dom
         titleDiv.textContent = question.title
 
-<<<<<<< HEAD
         //show alternatives in DOM
         let alternatives = document.querySelectorAll('.alternatives')
         console.log(alternatives);
@@ -84,34 +79,10 @@ let app = {
         let currQuestion = questions[this.currPosition]
 
         if (currQuestion.correctAnswer == userSelected ) {
-=======
-    showQuestion: function(question){
-        //keep track of current question
-        this.currQuestion = question
-
-            //select title ID in html
-        let titleDiv = document.getElementById('title')
-        //displays in the dom
-        titleDiv.textContent = question.title
-
-        //show alternatives in DOM
-        let alternatives = document.querySelectorAll('.alternatives')
-        console.log(alternatives);
-        //looping through alternatives to show in DOM
-        alternatives.forEach(function(element, index) {
-            element.textContent = question.alternatives[index]
-            
-        }) 
-    },
-
-    checkAnswer: function(userSelected){
-        if (this.currQuestion.correctAnswer == userSelected ) {
->>>>>>> bdb9d185413b53edca2a17608a93e9a333fe2374
             console.log("this is correct");
         } else {
             console.log('this is not correct')
         }
-<<<<<<< HEAD
 
         //increase position
         this.increaseQuestionPosition()
@@ -126,10 +97,8 @@ let app = {
         if(this.currPosition == questions.length) {
             this.currPosition = 0
         } 
-=======
->>>>>>> bdb9d185413b53edca2a17608a93e9a333fe2374
     }
-}
+},
 
 
 
