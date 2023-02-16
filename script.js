@@ -19,7 +19,7 @@ let questions = [{
     title: 'nwasena',
     alternatives: ['fly', 'puma', 'fish', 'dog'],
     correctAnswer: 0
-}]
+}];
 
 let app = {
     start: function(){
@@ -29,6 +29,7 @@ let app = {
         //showing alternatives in the DOM
         let alternatives = document.querySelectorAll('.alternatives')
         console.log(alternatives);
+
         //looping through alternatives 
         alternatives.forEach((element, index) => {
             element.addEventListener('click', () =>{
@@ -40,24 +41,7 @@ let app = {
     this.showQuestion(questions[this.currPosition])
     },
 
-let app = {
-    start: function(){
-        //showing alternatives in the DOM
-        let alternatives = document.querySelectorAll('.alternatives')
-        console.log(alternatives);
-        //looping through alternatives 
-        alternatives.forEach((element, index) => {
-            element.addEventListener('click', () =>{
-                //check correct answer
-                this .checkAnswer(index)
-            })
-        })
-        //show question
-    this.showQuestion(question)
-    },
-
     showQuestion: function(question){
-        //keep track of current question
   
             //select title ID in html
         let titleDiv = document.getElementById('title')
@@ -67,10 +51,10 @@ let app = {
         //show alternatives in DOM
         let alternatives = document.querySelectorAll('.alternatives')
         console.log(alternatives);
+
         //looping through alternatives to show in DOM
         alternatives.forEach(function(element, index) {
             element.textContent = question.alternatives[index]
-            
         }) 
     },
 
@@ -100,7 +84,5 @@ let app = {
     }
 },
 
-
-
 //initialize application
- app.start()
+ app.start();
