@@ -49,6 +49,12 @@ let question = {
       
       // show first question
       this.showQuestion(questions[this.currPosition]);
+
+      let next = document.getElementById('next')
+      next.addEventListener('click', ()=>{
+       this.showNextQuestion()
+       this.clearResult()
+      })
     },
     
     showQuestion: function(q) {
@@ -71,19 +77,26 @@ let question = {
       
       if(currQuestion.correctAnswer == userSelected) {
         // correct
-        console.log('correct');
         this.score++;
+        this.showResult(true)
+        console.log(this.score);
       }
       else {
-        // not correct
-        console.log('wrong');
+        this.showResult(false)
       }
+
+      //refresh stats
+      this.updateStats()
+    },
+
+    showNextQuestion: function(){
+            // increase position
+            this.increasePosition();
       
-      // increase position
-      this.increasePosition();
-      
-      // show next question
-      this.showQuestion(questions[this.currPosition]);
+            // show next question
+            this.showQuestion(questions[this.currPosition]);
+
+            this.updateStats()
     },
     
     increasePosition: function() {
@@ -99,8 +112,39 @@ let question = {
 
     updateStats: function() {
         let scoreDiv = document.getElementById('score')
-        scoreDiv.textContext = this.score
-    }
+        scoreDiv.textContext = `Your score: ${this.score}`
+    },
+
+    showResult: function(isCorrect) {
+      //select DOM element
+      let resultDiv = document.getElementById('result')
+      let result = ''
+
+      //checks
+      if(isCorrect) {
+        result = 'Correct Answer'
+      } else {
+        //get the current position
+        let currQuestion = questions[this.currPosition]
+
+        //get the correct answer (index)
+        let correctAnswerIndex = currQuestion.correctAnswer;
+
+        //get correct answer(text)
+        let correctAnswerText = currQuestion.alternatives[correctAnswerIndex]
+
+        result = `Wrong! Correct answer: ${correctAnswerText}`
+      }
+
+      resultDiv.textContent = result
+    },
+
+    clearResult: function(){
+      let resultDiv = document.getElementById('result')
+
+      resultDiv.innerHTML = ""
+    },
+    
     
   };
   
