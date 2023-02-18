@@ -24,7 +24,13 @@ let question = {
     title: 'nwasena',
     alternatives: ['fly', 'puma', 'fish', 'dog'],
     correctAnswer: 0
-}];
+},
+{
+  title: 'Okra',
+  alternatives: ['donkey', 'cat', 'horse', 'cock'],
+  correctAnswer: 1
+},
+];
   
   let app = {
     start: function() {
