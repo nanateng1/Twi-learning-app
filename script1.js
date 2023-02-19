@@ -1,8 +1,3 @@
-let question = {
-    title: 'gato',
-    alternatives: ['dog', 'cat', 'bird', 'fish'],
-    correctAnswer: 1
-  };
   
   // define the array that stores all questions
   let questions = [{
@@ -16,17 +11,17 @@ let question = {
     correctAnswer: 3
 },
 {
-    title: 'Okusie',
+    title: 'kusie',
     alternatives: ['cat', 'fish', 'rat', 'shark'],
     correctAnswer: 2
 },
 {
-    title: 'nwasena',
+    title: 'nwansena',
     alternatives: ['fly', 'puma', 'fish', 'dog'],
     correctAnswer: 0
 },
 {
-  title: 'Okra',
+  title: 'つkra',
   alternatives: ['donkey', 'cat', 'horse', 'cock'],
   correctAnswer: 1
 },
@@ -87,7 +82,8 @@ let question = {
 
       let scoreDiv = document.getElementById('score')
       let totalScore = document.querySelector('.total-score')
-
+      
+      
       
         
       
